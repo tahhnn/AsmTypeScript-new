@@ -1,0 +1,8 @@
+.card-list {
+    display: flex;
+    flex-wrap: wrap; /* Nếu muốn các thẻ Card xuống dòng khi không đủ không gian */
+  }
+  
+  .card-list .ant-card {
+    margin: 10px; /* Để tạo khoảng cách giữa các thẻ Card */
+  }
