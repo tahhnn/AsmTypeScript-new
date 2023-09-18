@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button, Form, Input } from "antd";
 
 type FieldType = {
@@ -6,7 +7,7 @@ type FieldType = {
   password?: string;
 };
 
-const SignIn = () => {
+const SignIn = ({ onSubmit }) => {
   const [user, setUser] = useState([]);
   useEffect(() => {
     fetch("http://localhost:3000/users")
@@ -19,6 +20,7 @@ const SignIn = () => {
     );
     if (userCheck) {
       localStorage.setItem("users", JSON.stringify(userCheck));
+      onSubmit();
     }
   };
   const onFinishFailed = (errorInfo: any) => {

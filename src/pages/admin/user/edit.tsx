@@ -22,7 +22,6 @@ const UpdateUser: React.FC<{
   }, [data, form]);
   const onFinish = (values: any) => {
     console.log(values);
-
     handleUserUpdate(values);
     navigate("/admin/user");
   };

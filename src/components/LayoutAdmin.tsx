@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import {
   AiOutlineArrowRight,
   AiOutlineArrowLeft,
@@ -15,17 +15,20 @@ const { Header, Sider, Content } = Layout;
 const LayoutAdmin: React.FC = () => {
   const [collapsed, setCollapsed] = useState(false);
   const [login, setLogin] = useState(false);
+  const [key, setKey] = useState(0);
   const {
     token: { colorBgContainer },
   } = theme.useToken();
   const navigate = useNavigate();
-  const checkLogin = JSON.parse(localStorage.getItem("users"));
-  useEffect(() => {
+  const handleSignIn = () => {
+    const checkLogin = JSON.parse(localStorage.getItem("users"));
+
     if (checkLogin) {
-      setLogin(true);
+      setLogin(!login);
       navigate("/admin/dashboard");
     }
-  }, []);
+  };
+
   return (
     <Layout style={{ height: "100vh" }}>
       <Sider trigger={null} collapsible collapsed={collapsed}>
@@ -89,6 +92,7 @@ const LayoutAdmin: React.FC = () => {
           ]}
         />
       </Sider>
+      {key}
       {login ? (
         <Layout>
           <Header style={{ padding: 0, background: colorBgContainer }}>
@@ -126,7 +130,7 @@ const LayoutAdmin: React.FC = () => {
               background: colorBgContainer,
             }}
           >
-            <SignIn />
+            <SignIn onSubmit={handleSignIn} />
           </Content>
         </Layout>
       )}

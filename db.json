@@ -1,38 +1,17 @@
 {
   "products": [
     {
-      "name": "Sản phẩm 1312312",
-      "price": "123214",
-      "description": "12312312q2323",
-      "image": "https://picsum.photos/200/300",
-      "id": 1
-    },
-    {
-      "name": "Sản phẩm 1",
+      "name": "Sản phẩm",
       "price": "Sản phẩm 1",
-      "description": "Sản phẩm 1",
+      "description": "Sản phẩm ",
       "image": "https://picsum.photos/200/300",
       "id": 2
-    },
-    {
-      "name": "111111111111",
-      "price": "11111111111111",
-      "description": "111111111111",
-      "image": "11111111111111",
-      "id": 3
-    },
-    {
-      "name": "123333333",
-      "price": "12333333",
-      "description": "1233333333",
-      "image": "https://picsum.photos/200/300",
-      "id": 4
     }
   ],
   "categories": [
     {
       "id": 1,
-      "name": "Danh muc 14"
+      "name": "Danh muc 1"
     },
     {
       "id": 2,
